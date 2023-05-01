@@ -8,11 +8,11 @@ body {margin:0;}
   width: 100%;
 }
 
-.navbar CurrentPage {
+.navbar p.currentPage {
   text-decoration: underline;
 }
 
-.navbar Logo {
+.navbar p.logo {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -22,7 +22,7 @@ body {margin:0;}
   font-size: 17px;
 }
 
-.navbar alignL {
+.navbar p.alignL {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -31,11 +31,11 @@ body {margin:0;}
   font-size: 15px;
 }
 
-.navbar alignL:hover {
+.navbar p.alignL:hover {
     text-decoration: underline;
 }
 
-.navbar alignR {
+.navbar p.alignR {
   float: right;
   display: block;
   color: #f2f2f2;
@@ -45,7 +45,7 @@ body {margin:0;}
   font-size: 17px;
 }
 
-.navbar alignR:hover {
+.navbar p.alignR:hover {
   background: #ddd;
   color: black;
 }
