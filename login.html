@@ -1,7 +1,9 @@
 <html>
-<head> <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> </head>
+<head> 
+  <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> </head>
 
-
+<body>
+  <script src="./Scripts/login.js"></script>
 <div class="navbar">
   <a class="logo" href="https://jdaunt0.github.io">FlyDreamAir</a>
   <a class="alignL" href="https://jdaunt0.github.io/info.html">How it works</a>
@@ -10,7 +12,16 @@
 </div>
 
 <div class="main">
-  <p>Login Page</p>
+  <form method="post" action="./login/loginHome.html">
+    <H1 >Login Page</H1>
+    <p>Username</p>
+    <input type="text" autofocus name="Username" size="30"/>
+    </br>
+    <p>Password</p>
+    <input type="text" name="Password" size="30"/>
+    </br></br>
+    <input type="submit" value="Login">
+  </form>
 </div>
 </body>
 </html>
