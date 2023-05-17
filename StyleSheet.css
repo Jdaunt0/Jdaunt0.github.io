@@ -55,12 +55,12 @@ margin-top: 30px;
 height: 1500px; 
 }
 
-.main a.button{
+.button{
   color: #000000;
   background-color: #2271b1;
 }
 
-.main a.button:hover{
+.button:hover{
     color: #2271b1;
     background-color: #353333;
     border: 2px solid #2271b1;
