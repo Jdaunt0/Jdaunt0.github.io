@@ -1,19 +1,56 @@
 <html>
-<head> <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> </head>
+<head> 
+  <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css">
+<script>
+  var points = 0;
+  var FirstName = "James";
+  var LastName = "Daunt";
+  var EmailAddess = "jdaunt0@gmail.com";
+  var Username = "Jdaunt";
+  var Password = "Password123";
+
+  document.getElementById("points").innerHTML = points;
+  document.getElementById("Fname").innerHTML = FirstName;
+  document.getElementById("Lname").innerHTML = LastName;
+  document.getElementById("Email").innerHTML = EmailAddress;
+  document.getElementById("User").innerHTML = Username;
+
+  function addPoints(inputValue) {
+    points = points + inputValue;
+    console.log(points);
+  }
+
+</script>
+</head>
 
 
 <div class="navbar">
-  <a class="logo" href="https://jdaunt0.github.io/login/loginHome.html">FlyDreamAir</a>
+  <a class="logo" href="https://jdaunt0.github.io/login/loginHome.html">FlyDreamAir</a> 
+  <a class="alignL">Points: 
+    <a id="points"></a>
+  </a>
+
   <a class="alignR" href="https://jdaunt0.github.io/login/rewards.html">Rewards</a>
   <a class="alignR" href="https://jdaunt0.github.io/login/account.html">Account</a>
 </div>
 
 <div class="main">
-  <p>
-    user ____ is loged in.
+  <h4>
     </br>
-    this is the accounts page
-  </p>
+    </br>
+    First name: <p id="Fname"></p>
+    </br>
+    Last name:  <p id="Lname"></p>
+    </br>
+    Email: <p id="Email"></p>
+    </br>
+    Username: <p id="User"></p>
+    </br></br>
+  
+    Admin Controls: </br>
+    <input type="button" value="Add Point" onclick="addPoints(10)"/>  
+
+  </h4>
 </div>
 </body>
 </html>
