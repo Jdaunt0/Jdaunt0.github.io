@@ -1,6 +1,34 @@
 <html>
-<head> <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> </head>
+<head> <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> 
+<script>
+    localStorage.setItem("points", "30");
 
+    function createUser(){
+      var FirstName = document.getElementById("Fname");
+      var LastName = document.getElementById("Lname");
+      var Email = document.getElementById("EmailAddress");
+      var Username = document.getElementById("Username");
+
+      var password = document.getElementById("password");
+      var passwordConfirm = document.getElementById("passwordConfirm");
+
+      if(password.value == passwordConfirm.value){
+        document.getElementById("error").innerHTML = "";
+        localStorage.setItem("Fname", FirstName.value);
+        localStorage.setItem("Lname", LastName.value);
+        localStorage.setItem("Email", Email.value);
+        localStorage.setItem("Username", Username.value);
+
+        localStorage.setItem("password", password.value);
+        window.open("https://jdaunt0.github.io/login/loginHome.html","_self")
+      }else{
+        document.getElementById("error").innerHTML = "Passwords do not match... try again";
+      }
+    }
+    
+</script>
+
+</head>
 
 <div class="navbar">
   <a class="logo" href="https://jdaunt0.github.io">FlyDreamAir</a>
@@ -10,7 +38,36 @@
 </div>
 
 <div class="main">
-  <p>Join Page</p>
+  <form method="post">
+    <H1 >Join Page</H1>
+
+    <label for="First"><b>First name:</b></label>
+    <input type="text" placeholder="First"  name="First" id="Fname" size="10" required>
+
+    <label for="Last"><b>Last name:</b></label>
+    <input type="text" placeholder="last"  name="Last" id="Lname" size="10" required>
+    </br></br>
+
+    <label for="email"><b>Email:</b></label>
+    <input type="text" placeholder="Enter Email Address" name="email" id="EmailAddress" size="39" required>
+    </br></br>
+
+    <label for="Uname"><b>Create Username:</b></label>
+    <input type="text" placeholder="Enter Username" name="Uname" id="Username" size="27"required>
+    </br></br>
+
+    <label for="psw"><b>Create Password:&nbsp;</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="password" size="27"required>
+    </br></br>
+
+    <label for="psw"><b>Confirm Password:&nbsp;</b></label>
+    <input type="password" placeholder="Confirm Password" name="psw" id="passwordConfirm" size="26"required>
+
+    </br></br>
+  </form>
+  <input type="button" value="Join" onclick="createUser()"/>  
+  </br>
+  <span id="error"></span> 
 </div>
 </body>
 </html>

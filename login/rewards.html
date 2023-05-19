@@ -1,18 +1,66 @@
 <html>
-<head> <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> </head>
+<head> <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> 
+  <script>
+    function loadUserInfo(){
+      document.getElementById("points").innerHTML = localStorage.getItem("points");
+    }
+
+    function usePoints(amount){
+      var points = localStorage.getItem("points");
+      
+      if(points>=amount){
+        points = points - amount
+      }
+      document.getElementById("points").innerHTML = points;
+      localStorage.setItem("points", points);
+    }
+    </script>
+</head>
 
 
 <div class="navbar">
   <a class="logo" href="https://jdaunt0.github.io/login/loginHome.html">FlyDreamAir</a>
+  <a class="alignL">Points: <span id="points">0 </span> </a>
   <a class="alignR" href="https://jdaunt0.github.io/login/rewards.html">Rewards</a>
   <a class="alignR" href="https://jdaunt0.github.io/login/account.html">Account</a>
 </div>
 
-<div class="main">
-  <p>
-    user ____ is loged in.
-    </br>
-    this is the rewards page
+<body onload="loadUserInfo()"></body>
+  <div class="main">
+    <p>
+      <table width="100%">
+      <tr> 
+        <th align ="center" >
+          <img src="https://Jdaunt0.github.io/images/headphones.jpg" alt="img" width="200" height="200">
+          </br>
+          <b>Headphones</b>
+          </br>
+          <b>900 Points</b>
+        </br>
+          <input type="button" value="Buy" onclick="usePoints(900)"/> 
+        </th>
+
+        <th align ="center">
+          <img src="https://Jdaunt0.github.io/images/phone.jpg" alt="img2" width="200" height="200">
+          </br>
+          <b>Phone</b>
+          </br>
+          <b>1500 Points</b>
+          </br>
+          <input type="button" value="Buy" onclick="usePoints(1500)"/> 
+        </th>
+
+        <th align ="center">
+          <img src="https://Jdaunt0.github.io/images/voucher.jpg" alt="img3" width="200" height="200">
+          </br>
+          <b>Supermarket Voucher</b>
+          </br>
+          <b>150 Points</b>
+          </br>
+          <input type="button" value="Buy" onclick="usePoints(150)"/> 
+        </th>
+      </tr>
+    </table>    
   </p>
 </div>
 </body>

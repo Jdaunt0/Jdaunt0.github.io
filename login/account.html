@@ -1,55 +1,51 @@
 <html>
 <head> 
   <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css">
-<script>
-  var points = 0;
-  var FirstName = "James";
-  var LastName = "Daunt";
-  var EmailAddess = "jdaunt0@gmail.com";
-  var Username = "Jdaunt";
-  var Password = "Password123";
+  <script>
+    function loadUserInfo(){
+      document.getElementById("points").innerHTML = localStorage.getItem("points");
+      document.getElementById("Fname").innerHTML = localStorage.getItem("Fname");
+      document.getElementById("Lname").innerHTML = localStorage.getItem("Lname");
+      document.getElementById("Email").innerHTML = localStorage.getItem("Email");
+      document.getElementById("User").innerHTML = localStorage.getItem("Username");
+    }
 
-  document.getElementById("points").innerHTML = points;
-  document.getElementById("Fname").innerHTML = FirstName;
-  document.getElementById("Lname").innerHTML = LastName;
-  document.getElementById("Email").innerHTML = EmailAddress;
-  document.getElementById("User").innerHTML = Username;
-
-  function addPoints(inputValue) {
-    points = points + inputValue;
-    console.log(points);
-  }
-
-</script>
+    function addPoints(){
+      var points = localStorage.getItem("points");
+      var pointsInpput = document.getElementById("inputPoints");
+      points = Number(pointsInpput.value);
+      document.getElementById("points").innerHTML = points;
+      localStorage.setItem("points", points);
+    }
+  </script>
 </head>
 
 
 <div class="navbar">
   <a class="logo" href="https://jdaunt0.github.io/login/loginHome.html">FlyDreamAir</a> 
-  <a class="alignL">Points: 
-    <a id="points"></a>
-  </a>
-
+  <a class="alignL">Points: <span id="points">0 </span> </a>
   <a class="alignR" href="https://jdaunt0.github.io/login/rewards.html">Rewards</a>
   <a class="alignR" href="https://jdaunt0.github.io/login/account.html">Account</a>
 </div>
 
+<body onload="loadUserInfo()">
 <div class="main">
   <h4>
     </br>
     </br>
-    First name: <p id="Fname"></p>
+    First name: <span id="Fname"></span>
     </br>
-    Last name:  <p id="Lname"></p>
+    Last name:  <span id="Lname"></span>
     </br>
-    Email: <p id="Email"></p>
+    Email: <span id="Email"></span>
     </br>
-    Username: <p id="User"></p>
+    Username: <span id="User"></span>
     </br></br>
   
     Admin Controls: </br>
-    <input type="button" value="Add Point" onclick="addPoints(10)"/>  
-
+    <input type="text" id="inputPoints"/>
+    <input type="button" value="Add Points" onclick="addPoints()"/>  
+    </br>
   </h4>
 </div>
 </body>

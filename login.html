@@ -1,6 +1,18 @@
 <html>
 <head> 
-  <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> </head>
+  <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css">
+  <script>
+    function login(){
+      var username = document.getElementById("username");
+      var password = document.getElementById("password");
+      if(localStorage.getItem("Username") == username.value && localStorage.getItem("password") ==  password.value){
+        window.open("https://jdaunt0.github.io/login/loginHome.html","_self")
+      }else{
+        document.getElementById("error").innerHTML = "Username or Password does not match... try again";
+      }
+    }
+  </script>
+</head>
 
 <body>
 <div class="navbar">
@@ -11,17 +23,19 @@
 </div>
 
 <div class="main">
-  <form method="get" action="https://jdaunt0.github.io/login/loginHome.html">
+  <form method="post">
     <H1 >Login Page</H1>
+    <label for="Uname"><b>Username:</b></label>
+    <input type="text" placeholder="Enter Username" name="Uname" id="username" size="27"required>
+    </br></br>
 
-    <label for="uname"><b>Username:</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-    </br></br>
     <label for="psw"><b>Password:&nbsp;</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" id="password" size="27"required>
     </br></br>
-    <input type="submit" value="Login">
   </form>
+<input type="button" value="Join" onclick="login()"/>  
+</br>
+<span id="error"></span> 
 </div>
 </body>
 </html>

@@ -1,13 +1,21 @@
 <html>
-<head> <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> </head>
+<head> <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css">
+<script>
+  function loadUserInfo(){
+    document.getElementById("points").innerHTML = localStorage.getItem("points");
+  }
+</script> 
+</head>
 
 
 <div class="navbar">
   <a class="logo" href="https://jdaunt0.github.io/login/loginHome.html">FlyDreamAir</a>
+  <a class="alignL">Points: <span id="points">0 </span> </a>
   <a class="alignR" href="https://jdaunt0.github.io/login/rewards.html">Rewards</a>
   <a class="alignR" href="https://jdaunt0.github.io/login/account.html">Account</a>
 </div>
 
+<body onload="loadUserInfo()"></body>
 <div class="main">
   <p>user ____ is loged in.</p>
 </div>
