@@ -11,8 +11,8 @@
 
       var password = document.getElementById("password");
       var passwordConfirm = document.getElementById("passwordConfirm");
-      
-      if(password.value == passwordConfirm.value && password != null){
+
+      if(password.value == passwordConfirm.value && password.value != null && Username.value != null){
         document.getElementById("error").innerHTML = "";
         localStorage.setItem("Fname", FirstName.value);
         localStorage.setItem("Lname", LastName.value);
