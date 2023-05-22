@@ -10,6 +10,8 @@
       
       if(points>=amount){
         points = points - amount
+      }else{
+        document.getElementById("error").innerHTML = "not enough points"
       }
       document.getElementById("points").innerHTML = points;
       localStorage.setItem("points", points);
@@ -61,6 +63,7 @@
         </th>
       </tr>
     </table>    
+  <span id="error"></span>
   </p>
 </div>
 </body>

@@ -1,7 +1,7 @@
 <html>
 <head> <link rel="stylesheet" href="https://jdaunt0.github.io/StyleSheet.css"> 
 <script>
-    localStorage.setItem("points", "30");
+    localStorage.setItem("points", "0");
 
     function createUser(){
       var FirstName = document.getElementById("Fname");
@@ -11,8 +11,8 @@
 
       var password = document.getElementById("password");
       var passwordConfirm = document.getElementById("passwordConfirm");
-
-      if(password.value == passwordConfirm.value){
+      
+      if(password.value == passwordConfirm.value && password != null){
         document.getElementById("error").innerHTML = "";
         localStorage.setItem("Fname", FirstName.value);
         localStorage.setItem("Lname", LastName.value);
@@ -38,7 +38,7 @@
 </div>
 
 <div class="main">
-  <form method="post">
+  <form>
     <H1 >Join Page</H1>
 
     <label for="First"><b>First name:</b></label>
@@ -62,7 +62,6 @@
 
     <label for="psw"><b>Confirm Password:&nbsp;</b></label>
     <input type="password" placeholder="Confirm Password" name="psw" id="passwordConfirm" size="26"required>
-
     </br></br>
   </form>
   <input type="button" value="Join" onclick="createUser()"/>  
