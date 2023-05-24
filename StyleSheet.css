@@ -74,9 +74,8 @@ height: 900px;
 
 .background {
   background-image: url("https://Jdaunt0.github.io/images/indexImage.jpeg");
-  background-size: contain;
 }
 
 .footer {
-  background-color: #353333;
+  background-color: #fffdfd;
 }
