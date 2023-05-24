@@ -5,13 +5,14 @@
       document.getElementById("points").innerHTML = localStorage.getItem("points");
     }
 
-    function usePoints(amount){
+    function usePoints(amount, name){
       var points = localStorage.getItem("points");
       
       if(points>=amount){
         points = points - amount
+        document.getElementById("output").innerHTML = document.getElementById("username") + " bought " + name + " for " + amount;
       }else{
-        document.getElementById("error").innerHTML = "not enough points"
+        document.getElementById("output").innerHTML = "not enough points"
       }
       document.getElementById("points").innerHTML = points;
       localStorage.setItem("points", points);
@@ -39,7 +40,7 @@
           </br>
           <b>900 Points</b>
         </br>
-          <input type="button" value="Buy" onclick="usePoints(900)"/> 
+          <input type="button" value="Buy" onclick="usePoints(900, 'some headphones')"/> 
         </th>
 
         <th align ="center">
@@ -49,7 +50,7 @@
           </br>
           <b>1500 Points</b>
           </br>
-          <input type="button" value="Buy" onclick="usePoints(1500)"/> 
+          <input type="button" value="Buy" onclick="usePoints(1500, 'a phone')"/> 
         </th>
 
         <th align ="center">
@@ -59,11 +60,11 @@
           </br>
           <b>150 Points</b>
           </br>
-          <input type="button" value="Buy" onclick="usePoints(150)"/> 
+          <input type="button" value="Buy" onclick="usePoints(150, 'a voucher')"/> 
         </th>
       </tr>
     </table>    
-  <span id="error"></span>
+  <span id="output"></span>
   </p>
 </div>
 </body>
